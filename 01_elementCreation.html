@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        #parabtn{
+        all: unset;
+        border: 5px solid rgb(79, 127, 132);
+        border-radius: 8px;
+        background-color: rgb(39, 33, 95);
+        font-size: 2rem;
+        margin-top: 1rem;
+        padding: 0.3rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #parabtn:hover{
+            background-color: rgb(69, 63, 120);
+            cursor: pointer;
+        }
+   </style>
+</head>
+<body style="background-color: rgb(30, 29, 29);
+color: #d6d6d6;
+font-size: 2rem;">
+
+    <div>This is a webpage for DOM Manipulation</div>
+    <button id="parabtn" onclick="createPara('New element added successfully')">Add element</button>
+
+</body>
+<script>
+    // methods -createElement  -createtextNode  -appendChild
+    
+       // const para=document.createElement('p') //creating element
+
+       // para.setAttribute('id','npara')
+       
+       // let content=document.createTextNode('This is a new paragraph')    // text for paragraph
+
+       // para.appendChild(content) // adding text to the paragraph
+    
+
+       // document.body.appendChild(para)  // adding paragraph to body of file
+        
+        let divOne=document.querySelector('div')
+        divOne.style.backgroundColor="purple"
+        
+        /* para.style.backgroundColor='orange'
+         para.style.color='black'
+         para.style.borderBottom='8px solid purple'
+         para.style.width='50%' */
+        // ^ this is embeded in function
+        
+      function createPara(txtnode){
+        const paragraph=document.createElement('p') //creating element
+
+        // paragraph.setAttribute('id',id)
+        
+        let content=document.createTextNode(txtnode)    // text for paragraph
+
+        paragraph.appendChild(content) // adding text to the paragraph
+
+
+        document.body.appendChild(paragraph)  // adding paragraph to body of file 
+
+        paragraph.style.backgroundColor='#e57a33'
+        paragraph.style.color='black'
+        paragraph.style.borderBottom='8px solid orange'
+        paragraph.style.width='100%'
+        paragraph.style.textAlign='center'
+        
+}
+createPara('Hello this is me')
+createPara('This is new paragraph')
+createPara('ayyeeeinnn')
+</script>
+
+<!-- selector.children // HTML collection of child elements
+selector.parentElement // parent element of selected tag
+selector.firstElementChild 
+selector.lastElementChild
+selector.nextElementSibling -->
+
+
+</html>
